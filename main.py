@@ -11,8 +11,11 @@ class Window:
         self.entry = Entry(self.canvas)
 
     def draw_widgets(self):
+        frame = LabelFrame(self.canvas, text='LabelFrame')
+        frame.pack(padx=10, pady=10, fill=X)
+
         self.entry.pack()
-        Button(self.canvas, text='Go!', command=self.button_action).pack()
+        Button(frame, text='Go!', command=self.button_action).pack(side=LEFT, padx=10, pady=10)
         self.label.pack(anchor=CENTER)
 
     def button_action(self):
